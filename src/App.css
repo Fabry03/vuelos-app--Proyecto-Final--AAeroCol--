@@ -1,0 +1,214 @@
+.header {
+  background: linear-gradient(135deg, #0ea5e9, #6366f1);
+  color: #ffffff;
+  text-align: center;
+  padding: 32px 16px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.header p {
+  margin: 8px 0 0;
+  opacity: 0.9;
+}
+
+.selector {
+  max-width: 520px;
+  margin: 24px auto;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.selector h2 {
+  margin: 0 0 16px;
+  font-size: 1.3rem;
+}
+
+.ruta {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  font-weight: 600;
+}
+
+.campo select {
+  margin-top: 6px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.flecha {
+  font-size: 1.4rem;
+  padding-bottom: 8px;
+}
+
+.selector button {
+  margin-top: 16px;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #f8fafc;
+  cursor: pointer;
+}
+
+.selector button:hover:not(:disabled) {
+  background: #e2e8f0;
+}
+
+.selector button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.lista {
+  max-width: 520px;
+  margin: 0 auto 24px;
+}
+
+.lista h2 {
+  font-size: 1.1rem;
+}
+
+.lista ul {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+}
+
+.lista li {
+  margin-bottom: 8px;
+}
+
+.tarjeta {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.tarjeta:hover,
+.tarjeta:focus-visible {
+  border-color: #0ea5e9;
+}
+
+.tarjeta.seleccionada {
+  background: #e0f2fe;
+  border: 2px solid #0284c7;
+}
+
+.tarjeta strong {
+  color: #0f766e;
+}
+
+.formulario-reserva {
+  display: grid;
+  gap: 16px;
+  max-width: 520px;
+  margin: 24px auto;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.formulario-reserva h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.formulario-reserva input[type='text'] {
+  margin-top: 6px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+}
+
+.control-pasajeros {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.control-pasajeros button,
+.formulario-reserva button[type='submit'] {
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #f8fafc;
+  cursor: pointer;
+}
+
+.clases {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+}
+
+.clases label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.total-reserva {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.formulario-reserva button[type='submit']:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.confirmacion-reserva {
+  max-width: 520px;
+  margin: 0 auto 24px;
+  color: #0f766e;
+  text-align: center;
+}
+
+.mensaje {
+  max-width: 520px;
+  margin: 24px auto;
+  padding: 12px;
+  text-align: center;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+}
+
+.footer {
+  text-align: center;
+  color: #64748b;
+  padding: 16px;
+}
