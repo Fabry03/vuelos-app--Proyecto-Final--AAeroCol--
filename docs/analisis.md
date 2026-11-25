@@ -1,4 +1,5 @@
-Dónde viven hoy los estados -origen- y -destino-? Y por qué ahí y no es -SelectCiudad-?
+Dónde viven hoy los estados -origen- y -destino-? 
+Y por qué ahí y no es -SelectCiudad-?
 R/ 
 Los estados viven en **`App`**, no dentro de `SelectCiudad.jsx`.
 
@@ -50,7 +51,8 @@ const vuelosEncontrados = VUELOS.filter(
 ```
 
 _____________________________________________
-ListaVuelos recibe vuelos, nombreOrigen, nombreDestino… ¿qué más necesitará recibir para que una tarjeta sea seleccionable?
+ListaVuelos recibe vuelos, nombreOrigen, nombreDestino… 
+¿qué más necesitará recibir para que una tarjeta sea seleccionable?
 R/
 Necesitará recibir:
 
@@ -70,7 +72,8 @@ En consecuencia, `ListaVuelos` debe pasarlos a `TarjetaVuelo`:
 
 `App` conservaría `vueloSeleccionado` en `useState()`.
 _____________________________________________________________________
-¿Qué datos necesita guardar una reserva? (propón la forma: { id, nombre, vuelo, pasajeros, clase, total, fecha })
+¿Qué datos necesita guardar una reserva? 
+(propón la forma: { id, nombre, vuelo, pasajeros, clase, total, fecha })
 R/
 Forma propuesta:
 
