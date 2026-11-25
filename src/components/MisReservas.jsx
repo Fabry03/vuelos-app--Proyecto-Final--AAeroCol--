@@ -8,6 +8,7 @@ function MisReservas({ reservas, onEliminar }) {
     <section className="mis-reservas">
       <h2>🎫 Mis reservas ({reservas.length})</h2>
 
+      {/* F2: muestra el estado vacío o la lista; la eliminación se delega a App. */}
       {reservas.length === 0 ? (
         <p>Aún no tienes reservas 👀</p>
       ) : (

@@ -5,6 +5,7 @@ function formatoPrecio(precio) {
 function TarjetaVuelo({ vuelo, seleccionado, onSeleccionar }) {
   return (
     <li>
+      {/* F3: selección visual y accesible; el clic comunica el vuelo al estado de App. */}
       <button
         type="button"
         className={`tarjeta${seleccionado ? ' seleccionada' : ''}`}

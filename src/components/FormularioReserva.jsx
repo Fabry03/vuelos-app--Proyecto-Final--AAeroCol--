@@ -6,17 +6,20 @@ function formatoPrecio(precio) {
 }
 
 function FormularioReserva({ vuelo, onReservar }) {
+  // F1: estos valores solo pertenecen al formulario y no necesitan vivir en App.
   const [nombre, setNombre] = useState('')
   const [pasajeros, setPasajeros] = useState(1)
   const [claseId, setClaseId] = useState(CLASES[0].id)
 
   const claseSeleccionada = CLASES.find((clase) => clase.id === claseId)
+  // El total es derivado de los datos actuales, no un estado duplicado que pueda desincronizarse.
   const total = vuelo.precio * pasajeros * claseSeleccionada.factor
 
   const manejarEnvio = (evento) => {
     evento.preventDefault()
     if (!nombre.trim()) return
 
+    // La reserva completa sube a App, que es dueña del estado compartido de reservas.
     onReservar({
       id: Date.now(),
       nombre: nombre.trim(),

@@ -15,6 +15,7 @@ function ListaVuelos({
       </h2>
       <ul>
         {vuelos.map((v) => (
+          // F3: cada tarjeta recibe si está seleccionada y la acción para informar a App.
           <TarjetaVuelo
             key={v.id}
             vuelo={v}

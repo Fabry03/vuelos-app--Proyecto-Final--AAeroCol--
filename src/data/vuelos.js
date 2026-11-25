@@ -8,6 +8,7 @@ export const CIUDADES = [
 ]
 
 export const CLASES = [
+  // F1: el factor de cada clase se multiplica por el precio y la cantidad de pasajeros.
   { id: 'economica', nombre: 'Económica', factor: 1 },
   { id: 'ejecutiva', nombre: 'Ejecutiva', factor: 1.6 },
   { id: 'primera', nombre: 'Primera', factor: 2.4 },

@@ -13,29 +13,30 @@ function nombreCiudad(codigo) {
 }
 
 function App() {
+  // Estado compartido: ruta, vuelo seleccionado, orden y reservas son usados por varias secciones.
   const [origen, setOrigen] = useState('')
   const [destino, setDestino] = useState('')
   const [vueloSeleccionado, setVueloSeleccionado] = useState(null)
   const [orden, setOrden] = useState('precio-asc')
 
-  // Cargar las reservas guardadas al iniciar la aplicación
+  // F2: inicializador perezoso; lee las reservas guardadas solo al montar la aplicación.
   const [reservas, setReservas] = useState(() => {
     const guardadas = localStorage.getItem('reservas')
     return guardadas ? JSON.parse(guardadas) : []
   })
 
-  // Guardar las reservas cada vez que cambien
+  // F2: localStorage solo admite texto, por eso se serializa el array como JSON.
   useEffect(() => {
     localStorage.setItem('reservas', JSON.stringify(reservas))
   }, [reservas])
-
-  // Aquí continúa el resto de tu código...
 
   const ciudadesDestino = CIUDADES.filter((c) => c.codigo !== origen)
   const vuelosEncontrados =
     origen !== '' && destino !== ''
       ? VUELOS.filter((v) => v.origen === origen && v.destino === destino)
       : []
+
+  // Al cambiar la ruta se descarta la selección para no reservar un vuelo de otra ruta.
   const manejarOrigen = (codigo) => {
     setOrigen(codigo)
     setVueloSeleccionado(null)
@@ -45,31 +46,34 @@ function App() {
     setDestino(codigo)
     setVueloSeleccionado(null)
   }
+
   const intercambiar = () => {
     setOrigen(destino)
     setDestino(origen)
     setVueloSeleccionado(null)
   }
+
+  // F3: sort modifica el array original; ordenar una copia conserva intactos los datos fuente.
   const vuelosOrdenados = [...vuelosEncontrados].sort((a, b) => {
-  switch (orden) {
-    case 'precio-asc':
-      return a.precio - b.precio
+    switch (orden) {
+      case 'precio-asc':
+        return a.precio - b.precio
 
-    case 'precio-desc':
-      return b.precio - a.precio
+      case 'precio-desc':
+        return b.precio - a.precio
 
-    case 'hora':
-      return a.hora.localeCompare(b.hora)
+      case 'hora':
+        return a.hora.localeCompare(b.hora)
 
-    case 'avion':
-      return a.avion.localeCompare(b.avion)
+      case 'avion':
+        return a.avion.localeCompare(b.avion)
 
-    default:
-      return 0
-  }
-})
+      default:
+        return 0
+    }
+  })
 
-
+  // F1/F2: App conserva las reservas compartidas y las actualiza de forma inmutable.
   return (
     <main>
       <Header aerolinea="AvianPolombia" eslogan="Tu vuelo en un clic" />
