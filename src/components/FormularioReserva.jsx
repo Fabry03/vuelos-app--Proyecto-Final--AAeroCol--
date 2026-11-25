@@ -32,6 +32,14 @@ function FormularioReserva({ vuelo, onReservar }) {
     <form className="formulario-reserva" onSubmit={manejarEnvio}>
       <h2>📝 Reserva tu vuelo</h2>
 
+      <div className="detalle-vuelo">
+        <h3>✈️ Detalle del vuelo seleccionado</h3>
+
+        <p>Avión: {vuelo.avion}</p>
+        <p>Hora de salida: {vuelo.hora}</p>
+        <p>Precio por pasajero: {formatoPrecio(vuelo.precio)}</p>
+    </div>
+
       <label className="campo">
         Nombre del pasajero
         <input
