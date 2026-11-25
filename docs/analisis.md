@@ -104,6 +104,7 @@ const [reservas, setReservas] = useState([])
 ______________________________________________________________________
 
 Árbol:
+```text
 App
 ├── Header
 ├── SelectorRuta
@@ -113,3 +114,4 @@ App
 ├── FormularioReserva     ← nuevo: datos de la reserva
 └── ListaReservas         ← nuevo: muestra las reservas
     └── TarjetaReserva    ← nuevo: muestra una reserva
+```
